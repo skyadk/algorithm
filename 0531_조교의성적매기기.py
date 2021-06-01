@@ -3,8 +3,6 @@
 score = ['A+', 'A0', 'A-', 'B+', 'B0', 'B-', 'C+', 'C0', 'C-', 'D0']
 T = int(input())
 # 여러개의 테스트 케이스가 주어지므로, 각각을 처리합니다.
-for test_case in range(1, T + 1):T = int(input())
-# 여러개의 테스트 케이스가 주어지므로, 각각을 처리합니다.
 for test_case in range(1, T + 1):
     n, k = map(int, input().split())
     total_arr = []
@@ -17,5 +15,5 @@ for test_case in range(1, T + 1):
     print(total_arr)
     total_arr.sort(reverse=True)
     print(total_arr)
-    idx = total_arr.index(kscore) // (n//10) # 10 // 3 = 3  , round는 반올림
+    idx = round(total_arr.index(kscore) // (n//10))
     print('#{} {}'.format(test_case, score[idx]))
